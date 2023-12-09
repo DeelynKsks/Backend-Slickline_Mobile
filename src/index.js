@@ -9,6 +9,7 @@ import { settings } from './settings/config.js';
 import { connectDB } from './settings/database.js';
 
 import { userRouter } from './modules/users/user.controller.js';
+import { dataRouter } from './modules/data/data.controller.js';
 import { projectRouter } from './modules/projects/project.controller.js';
 import { taskRouter } from './modules/projects/task.controller.js';
 import { getAllTaskByProject } from './modules/projects/task.service.js';
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/users', userRouter);
+app.use('/api/data', dataRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/projects', validateJWT, projectRouter);
 app.use('/api/tasks', validateJWT, taskRouter);
