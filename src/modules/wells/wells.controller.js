@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getWells } from './well.service.js';
+import { getWells } from './wells.service.js';
 
 const wellRouter = Router();
 
